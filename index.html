@@ -598,6 +598,26 @@ section {
   color: #fff;
 }
 
+.resume-download {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border: 1px solid var(--gold);
+  color: var(--charcoal);
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.resume-download:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
 /* ===================== CONTACT ===================== */
 .contact {
   background: var(--soft-black);
@@ -950,22 +970,22 @@ footer {
   <div class="gallery-grid">
     <!-- REPLACE: Swap these with Annabelle's professional photos -->
     <div class="gallery-item reveal">
-      <img src="images/gallery-1.jpg" alt="Annabelle performing contemporary dance" loading="lazy">
+      <img src="images/gallery-1-v2.jpg" alt="Annabelle performing contemporary dance" loading="lazy">
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img src="images/gallery-2.jpg" alt="Annabelle in ballet pose" loading="lazy">
+      <img src="images/gallery-2-v2.jpg" alt="Annabelle in ballet pose" loading="lazy">
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img src="images/gallery-3.jpg" alt="Annabelle jazz performance" loading="lazy">
+      <img src="images/gallery-3-v2.jpg" alt="Annabelle jazz performance" loading="lazy">
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <img src="images/gallery-4.jpg" alt="Annabelle in musical theatre production" loading="lazy">
+      <img src="images/gallery-4-v2.jpg" alt="Annabelle in musical theatre production" loading="lazy">
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <img src="images/gallery-5.jpg" alt="Annabelle hip-hop dance" loading="lazy">
+      <img src="images/gallery-5-v2.jpg" alt="Annabelle hip-hop dance" loading="lazy">
     </div>
     <div class="gallery-item reveal reveal-delay-3">
-      <img src="images/gallery-6.jpg" alt="Annabelle dance headshot" loading="lazy">
+      <img src="images/gallery-6-v2.jpg" alt="Annabelle dance headshot" loading="lazy">
     </div>
   </div>
 </section>
@@ -1059,9 +1079,15 @@ footer {
       </div>
     </div>
   </div>
-</section>
 
-<!-- ============ CONTACT ============ -->
+  <div style="text-align: center; margin-top: 50px;" class="reveal">
+    <!-- REPLACE: Add Annabelle's resume PDF to the docs/ folder -->
+    <a href="docs/annabelle-summers-resume.pdf" target="_blank" rel="noopener" class="resume-download">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px; margin-top: -2px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+      View Full Résumé (PDF)
+    </a>
+  </div>
+</section>
 <section class="contact" id="contact">
   <p class="section-label reveal">Contact</p>
   <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 16px;">Let's <em>create together</em></h2>
