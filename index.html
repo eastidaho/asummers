@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annabelle Summers — Singer · Dancer · Actress</title>
+<meta name="description" content="Annabelle Summers is a singer, dancer, and actress trained in musical theatre, contemporary, ballet, jazz, and hip-hop. BYU-Idaho B.A. in Dance. Available for auditions, roles, and collaborations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #F5F0EB;
+  --warm-white: #FAF8F5;
+  --charcoal: #2A2420;
+  --soft-black: #1A1614;
+  --gold: #C4A46C;
+  --gold-light: #D4BA8A;
+  --muted-rose: #C4A093;
+  --taupe: #8B7D72;
+  --light-taupe: #B8ADA5;
+  --section-pad: clamp(80px, 12vh, 140px);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== NAV ===================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.5s, backdrop-filter 0.5s, padding 0.4s;
+}
+
+nav.scrolled {
+  background: rgba(26, 22, 20, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 14px 40px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 22, 20, 0.97);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.mobile-menu.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--soft-black);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(26,22,20,0.2) 0%, rgba(26,22,20,0.1) 40%, rgba(26,22,20,0.6) 100%),
+    url('images/hero.jpg') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 24px;
+}
+
+.hero-overtitle {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 1s 0.3s forwards;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 1.2s 0.5s forwards;
+}
+
+.hero-name em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  opacity: 0;
+  animation: fadeUp 1s 0.9s forwards;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  opacity: 0;
+  animation: fadeUp 1s 1.3s forwards;
+}
+
+.hero-scroll .line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== SECTIONS ===================== */
+section {
+  padding: var(--section-pad) clamp(24px, 6vw, 100px);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--charcoal);
+}
+
+.section-title em {
+  font-style: italic;
+}
+
+.section-divider {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 40px;
+}
+
+/* ===================== ABOUT ===================== */
+.about {
+  background: var(--warm-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--gold);
+  z-index: -1;
+  transition: transform 0.5s;
+}
+
+.about-image-wrapper:hover::before {
+  transform: translate(-4px, -4px);
+}
+
+.about-text p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--taupe);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(196,164,108,0.25);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-taupe);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ===================== SHOWREEL ===================== */
+.showreel {
+  background: var(--soft-black);
+  text-align: center;
+}
+
+.showreel .section-title { color: var(--cream); }
+
+.video-container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--light-taupe);
+  margin-top: 20px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* ===================== REEL TABS ===================== */
+.reel-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.reel-tab {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid rgba(196,164,108,0.4);
+  background: transparent;
+  color: var(--light-taupe);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reel-tab:hover {
+  border-color: var(--gold);
+  color: var(--cream);
+}
+
+.reel-tab.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--soft-black);
+}
+
+/* ===================== GALLERY ===================== */
+.gallery {
+  background: var(--cream);
+}
+
+.gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,22,20,0.5) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.gallery-item-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.gallery-item:hover .gallery-item-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(26, 22, 20, 0.95);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: lbFade 0.3s;
+}
+
+.lightbox.active { display: flex; }
+
+@keyframes lbFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: 300;
+  font-family: var(--font-display);
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover { color: #fff; }
+
+/* ===================== RESUME ===================== */
+.resume {
+  background: var(--warm-white);
+}
+
+.resume-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 80px;
+}
+
+.resume-col h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--charcoal);
+}
+
+.resume-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(196,164,108,0.15);
+}
+
+.resume-item:last-child {
+  border-bottom: none;
+}
+
+.resume-role {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.resume-company {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--taupe);
+  font-weight: 400;
+  margin-top: 3px;
+}
+
+.resume-year {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.skill-tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  border: 1px solid var(--gold);
+  color: var(--charcoal);
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+}
+
+.skill-tag:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ===================== CONTACT ===================== */
+.contact {
+  background: var(--soft-black);
+  text-align: center;
+}
+
+.contact .section-title { color: var(--cream); }
+
+.contact-text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--light-taupe);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+.contact-email {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--gold-light);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.contact-email::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s;
+}
+
+.contact-email:hover { color: #fff; }
+.contact-email:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.contact-socials a {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-taupe);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-socials a:hover { color: var(--gold-light); }
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: var(--soft-black);
+  padding: 24px 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.1em;
+}
+
+/* ===================== SCROLL ANIMATIONS ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image-wrapper { max-width: 400px; }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  nav { padding: 16px 20px; }
+  nav.scrolled { padding: 12px 20px; }
+
+  section { padding: var(--section-pad) 20px; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .about-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Annabelle Summers</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#showreel">Showreel</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#resume">Résumé</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#showreel" onclick="closeMobile()">Showreel</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#resume" onclick="closeMobile()">Résumé</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-overtitle">Singer · Dancer · Actress — Triple Threat</p>
+    <h1 class="hero-name">Annabelle<br><em>Summers</em></h1>
+    <p class="hero-tagline">Musical Theatre · Contemporary · Ballet · Jazz · Hip-Hop</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image-wrapper reveal">
+      <!-- REPLACE: Use a strong 3/4 portrait headshot here -->
+      <img src="images/about.jpg" alt="Annabelle Summers portrait">
+    </div>
+    <div class="about-text">
+      <p class="section-label reveal">About</p>
+      <h2 class="section-title reveal reveal-delay-1">Born to be <em>on stage</em></h2>
+      <div class="section-divider reveal reveal-delay-2"></div>
+      <p class="reveal reveal-delay-2">
+        Annabelle Summers is a performer who brings the full picture to every stage — a voice that fills the room, movement that captivates, and the acting instincts to make a character live and breathe. Whether she's anchoring a musical theatre production, dancing a contemporary solo, or delivering a monologue, she commits completely.
+      </p>
+      <p class="reveal reveal-delay-3">
+        She holds a Bachelor of Arts in Dance Choreography &amp; Performance from Brigham Young University–Idaho (Class of 2022), with training spanning ballet, contemporary, jazz, and hip-hop. Her vocal and acting abilities round out an artistry that directors and choreographers love to work with.
+      </p>
+      <div class="about-stats reveal reveal-delay-3">
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Triple Threat</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Dance Styles</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">B.A.</div>
+          <div class="stat-label">BYU-Idaho '22</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWREEL ============ -->
+<section class="showreel" id="showreel">
+  <p class="section-label reveal" style="text-align:center;">Showreel</p>
+  <h2 class="section-title reveal reveal-delay-1" style="text-align:center; margin-bottom: 12px;">See Annabelle <em>in action</em></h2>
+  
+  <div class="reel-tabs reveal reveal-delay-2">
+    <button class="reel-tab active" data-video="VIDEO_ID_DANCE" data-caption="Dance reel — choreography &amp; performance highlights">Dance Reel</button>
+    <button class="reel-tab" data-video="VIDEO_ID_SINGING" data-caption="Vocal reel — musical theatre &amp; solo performances">Vocal Reel</button>
+    <button class="reel-tab" data-video="VIDEO_ID_ACTING" data-caption="Acting reel — monologues &amp; scene work">Acting Reel</button>
+  </div>
+
+  <div class="video-container reveal reveal-delay-2">
+    <!-- REPLACE: Swap each VIDEO_ID above with real YouTube IDs. Remove tabs you don't need yet. -->
+    <iframe 
+      id="reelPlayer"
+      src="https://www.youtube.com/embed/VIDEO_ID_DANCE?rel=0&modestbranding=1" 
+      title="Annabelle Summers Performance Reel" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  <p class="video-caption reveal reveal-delay-3" id="reelCaption">Dance reel — choreography &amp; performance highlights</p>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div style="text-align:center; margin-bottom: 50px;">
+    <p class="section-label reveal">Gallery</p>
+    <h2 class="section-title reveal reveal-delay-1">Captured <em>moments</em></h2>
+    <div class="section-divider reveal reveal-delay-2" style="margin: 20px auto 0;"></div>
+  </div>
+
+  <div class="gallery-grid">
+    <!-- REPLACE: Swap these with Annabelle's professional photos -->
+    <div class="gallery-item reveal">
+      <img src="images/gallery-1.jpg" alt="Annabelle performing contemporary dance" loading="lazy">
+      <span class="gallery-item-label">Contemporary</span>
+    </div>
+    <div class="gallery-item reveal reveal-delay-1">
+      <img src="images/gallery-2.jpg" alt="Annabelle in ballet pose" loading="lazy">
+      <span class="gallery-item-label">Ballet</span>
+    </div>
+    <div class="gallery-item reveal reveal-delay-2">
+      <img src="images/gallery-3.jpg" alt="Annabelle jazz performance" loading="lazy">
+      <span class="gallery-item-label">Jazz</span>
+    </div>
+    <div class="gallery-item reveal reveal-delay-1">
+      <img src="images/gallery-4.jpg" alt="Annabelle in musical theatre production" loading="lazy">
+      <span class="gallery-item-label">Musical Theatre</span>
+    </div>
+    <div class="gallery-item reveal reveal-delay-2">
+      <img src="images/gallery-5.jpg" alt="Annabelle hip-hop dance" loading="lazy">
+      <span class="gallery-item-label">Hip-Hop</span>
+    </div>
+    <div class="gallery-item reveal reveal-delay-3">
+      <img src="images/gallery-6.jpg" alt="Annabelle dance headshot" loading="lazy">
+      <span class="gallery-item-label">Headshot</span>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============ RESUME ============ -->
+<section class="resume" id="resume">
+  <div style="text-align:center; margin-bottom: 50px;">
+    <p class="section-label reveal">Résumé</p>
+    <h2 class="section-title reveal reveal-delay-1">Training &amp; <em>Experience</em></h2>
+    <div class="section-divider reveal reveal-delay-2" style="margin: 20px auto 0;"></div>
+  </div>
+
+  <div class="resume-grid">
+    <div class="resume-col reveal">
+      <h3>Education</h3>
+      <div class="resume-item">
+        <div class="resume-role">B.A. Dance Choreography &amp; Performance</div>
+        <div class="resume-company">Brigham Young University–Idaho</div>
+        <div class="resume-year">Graduated July 2022</div>
+      </div>
+
+      <!-- REPLACE: Add additional training, workshops, intensives -->
+      <h3 style="margin-top: 36px;">Training &amp; Intensives</h3>
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Workshop / Intensive</div>
+        <div class="resume-company">Studio or Organization</div>
+        <div class="resume-year">Year</div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Masterclass or Training</div>
+        <div class="resume-company">Studio or Organization</div>
+        <div class="resume-year">Year</div>
+      </div>
+
+      <h3 style="margin-top: 36px;">Voice &amp; Vocal Training</h3>
+      <!-- REPLACE: Add vocal training, coaches, choir experience -->
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Vocal Coach or Program</div>
+        <div class="resume-company">Studio or Institution</div>
+        <div class="resume-year">Year</div>
+      </div>
+      <div class="resume-item">
+        <!-- REPLACE: Add her vocal range, e.g. Mezzo-Soprano, Alto, Soprano -->
+        <div class="resume-role">Vocal Range: Placeholder (e.g. Mezzo-Soprano)</div>
+        <div class="resume-company">Belt range, mix, head voice details</div>
+      </div>
+    </div>
+
+    <div class="resume-col reveal reveal-delay-2">
+      <h3>Theatre &amp; Performance Credits</h3>
+
+      <!-- REPLACE: Add Annabelle's real credits — format: Role / Show / Company -->
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Role, <em>Show Title</em></div>
+        <div class="resume-company">Theatre Company / Production</div>
+        <div class="resume-year">Year</div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Role, <em>Show Title</em></div>
+        <div class="resume-company">Theatre Company / Production</div>
+        <div class="resume-year">Year</div>
+      </div>
+      <div class="resume-item">
+        <div class="resume-role">Placeholder — Role, <em>Show Title</em></div>
+        <div class="resume-company">Theatre Company / Production</div>
+        <div class="resume-year">Year</div>
+      </div>
+
+      <h3 style="margin-top: 36px;">Skills &amp; Disciplines</h3>
+      <div class="skills-list">
+        <span class="skill-tag">Contemporary</span>
+        <span class="skill-tag">Modern</span>
+        <span class="skill-tag">Ballet</span>
+        <span class="skill-tag">Pointe</span>
+        <span class="skill-tag">Jazz</span>
+        <span class="skill-tag">Musical Theatre</span>
+        <span class="skill-tag">Hip-Hop</span>
+        <span class="skill-tag">Street Styles</span>
+        <span class="skill-tag">Choreography</span>
+        <span class="skill-tag">Singing</span>
+        <span class="skill-tag">Acting</span>
+        <span class="skill-tag">Scene Work</span>
+        <span class="skill-tag">Monologue</span>
+        <span class="skill-tag">Cold Reading</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <p class="section-label reveal">Contact</p>
+  <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 16px;">Let's <em>create together</em></h2>
+  <div class="section-divider reveal reveal-delay-2" style="margin: 0 auto 32px;"></div>
+  <p class="contact-text reveal reveal-delay-2">
+    Available for auditions, theatrical productions, musical theatre roles, choreography commissions, and creative collaborations. Let's make something unforgettable.
+  </p>
+
+  <!-- REPLACE: Swap with Annabelle's real email -->
+  <a href="mailto:annabelle@email.com" class="contact-email reveal reveal-delay-3">annabelle@email.com</a>
+
+  <div class="contact-socials reveal reveal-delay-3">
+    <!-- REPLACE: Add real social media links -->
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+    <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  &copy; 2026 Annabelle Summers. All rights reserved.
+</footer>
+
+<!-- ============ JS ============ -->
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+
+function closeMobile() {
+  mobileMenu.classList.remove('active');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+
+// Reel tab switcher
+const reelTabs = document.querySelectorAll('.reel-tab');
+const reelPlayer = document.getElementById('reelPlayer');
+const reelCaption = document.getElementById('reelCaption');
+
+reelTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    reelTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const videoId = tab.getAttribute('data-video');
+    const caption = tab.getAttribute('data-caption');
+    reelPlayer.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+    reelCaption.innerHTML = caption;
+  });
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const src = item.querySelector('img').src;
+    const alt = item.querySelector('img').alt;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox || e.target === lightboxClose) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+</script>
+</body>
+</html>
