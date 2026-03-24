@@ -474,39 +474,6 @@ section {
   transform: scale(1.06);
 }
 
-.gallery-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,22,20,0.5) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.gallery-item:hover::after {
-  opacity: 1;
-}
-
-.gallery-item-label {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #fff;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.4s, transform 0.4s;
-}
-
-.gallery-item:hover .gallery-item-label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Lightbox */
 .lightbox {
   display: none;
@@ -647,31 +614,110 @@ section {
   margin: 0 auto 40px;
 }
 
-.contact-email {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 400;
-  color: var(--gold-light);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s;
+.contact-form-wrapper {
+  max-width: 560px;
+  margin: 0 auto 40px;
 }
 
-.contact-email::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 1px;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--cream);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(196,164,108,0.25);
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(184,173,165,0.4);
+}
+
+.form-group select {
+  color: var(--light-taupe);
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: var(--soft-black);
+  color: var(--cream);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 40px;
   background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s;
+  color: var(--soft-black);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  align-self: center;
+  margin-top: 8px;
 }
 
-.contact-email:hover { color: #fff; }
-.contact-email:hover::after { transform: scaleX(1); transform-origin: left; }
+.form-submit:hover {
+  background: transparent;
+  color: var(--gold-light);
+}
+
+.form-note {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  margin-top: 16px;
+  text-align: center;
+  min-height: 1.2em;
+}
 
 .contact-socials {
   display: flex;
@@ -763,6 +809,16 @@ footer {
   .contact-socials {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
   }
 }
 </style>
@@ -878,27 +934,21 @@ footer {
     <!-- REPLACE: Swap these with Annabelle's professional photos -->
     <div class="gallery-item reveal">
       <img src="images/gallery-1.jpg" alt="Annabelle performing contemporary dance" loading="lazy">
-      <span class="gallery-item-label">Contemporary</span>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
       <img src="images/gallery-2.jpg" alt="Annabelle in ballet pose" loading="lazy">
-      <span class="gallery-item-label">Ballet</span>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
       <img src="images/gallery-3.jpg" alt="Annabelle jazz performance" loading="lazy">
-      <span class="gallery-item-label">Jazz</span>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
       <img src="images/gallery-4.jpg" alt="Annabelle in musical theatre production" loading="lazy">
-      <span class="gallery-item-label">Musical Theatre</span>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
       <img src="images/gallery-5.jpg" alt="Annabelle hip-hop dance" loading="lazy">
-      <span class="gallery-item-label">Hip-Hop</span>
     </div>
     <div class="gallery-item reveal reveal-delay-3">
       <img src="images/gallery-6.jpg" alt="Annabelle dance headshot" loading="lazy">
-      <span class="gallery-item-label">Headshot</span>
     </div>
   </div>
 </section>
@@ -1003,8 +1053,38 @@ footer {
     Available for auditions, theatrical productions, musical theatre roles, choreography commissions, and creative collaborations. Let's make something unforgettable.
   </p>
 
-  <!-- REPLACE: Swap with Annabelle's real email -->
-  <a href="mailto:annabelle@email.com" class="contact-email reveal reveal-delay-3">annabelle@email.com</a>
+  <!-- REPLACE: Swap YOUR_FORM_ID with your Formspree endpoint (sign up free at formspree.io) -->
+  <div class="contact-form-wrapper reveal reveal-delay-3">
+    <form action="https://formspree.io/f/maqprpwj" method="POST" class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Your email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected>Select a reason</option>
+          <option value="Audition / Casting">Audition / Casting</option>
+          <option value="Choreography">Choreography Commission</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Representation">Representation / Agency</option>
+          <option value="General">General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+    <p class="form-note" id="formStatus"></p>
+  </div>
 
   <div class="contact-socials reveal reveal-delay-3">
     <!-- REPLACE: Add real social media links -->
@@ -1100,6 +1180,40 @@ document.addEventListener('keydown', (e) => {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
   }
+});
+
+// Contact form
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = contactForm.querySelector('.form-submit');
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formStatus.textContent = 'Thank you! Your message has been sent.';
+      formStatus.style.color = 'var(--gold-light)';
+      contactForm.reset();
+    } else {
+      formStatus.textContent = 'Something went wrong. Please try again.';
+      formStatus.style.color = 'var(--muted-rose)';
+    }
+  } catch (error) {
+    formStatus.textContent = 'Something went wrong. Please try again.';
+    formStatus.style.color = 'var(--muted-rose)';
+  }
+
+  submitBtn.textContent = 'Send Message';
+  submitBtn.disabled = false;
 });
 </script>
 </body>
